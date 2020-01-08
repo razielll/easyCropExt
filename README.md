@@ -1,5 +1,6 @@
 
-# Version 0.0.2
+# Easy Crop - Awesome tool for cropping and taking screenshots
+## Version 0.0.2
 Complete Revamp of code
 Improved performance -> Moved to requestAnimationFrame method.
 Improved code readability
