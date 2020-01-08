@@ -69,6 +69,7 @@ function handleMouseMove(e) {
     EZ_CROP_APP.height = Math.abs(EZ_CROP_APP.sy - EZ_CROP_APP.ey);
 
     EZ_CROP_APP.animationFrameId = requestAnimationFrame(drawSelectionBox);
+    requestAnimationFrame(drawDimensionBox);
 };
 function handleMouseUp(e) {
     if (!e.shiftKey || e.which !== 1) return clearSelectionBox();
@@ -153,8 +154,6 @@ function drawSelectionBox() {
     selectionBoxEl.style.top = startYdaw + 'px';
     selectionBoxEl.style.width = width + 'px';
     selectionBoxEl.style.height = height + 'px';
-
-    requestAnimationFrame(drawDimensionBox);
 };
 function drawDimensionBox() {
     let { width, height, dimensionBoxEl } = EZ_CROP_APP;

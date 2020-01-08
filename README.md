@@ -3,7 +3,7 @@
 ##  Version 1.0.1
 Animation frame for dimensions box!
 ###  Version 1.0.0
-CTRL + SHIFT + A to take a screen shot of the whole page
+Added full page screenshot shortcut
 
 #### Version 0.0.2
 Complete Revamp of code improved readability & quality
