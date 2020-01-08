@@ -1,14 +1,9 @@
-1.0.2 new -> Revamped to use requestAnimationFrame which should increase performance
-* removed redundant css
-* performance improvements
-* code improvements - performance + readability
-* moved to global object instead of local vars
-* added comments
 
-# CTRL
-
-
-### WIP
-full screen shortcut -> CTRL SHIFT A
-
-<!-- https://flaviocopes.com/requestanimationframe/ -->
+# Version 0.0.2
+Complete Revamp of code
+Improved performance -> Moved to requestAnimationFrame method.
+Improved code readability
+Reduced DOM usage
+Removed redundant css
+Increased readability and simplicity of code
+## Next ver short cut for complete screen capture
