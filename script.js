@@ -154,12 +154,12 @@ function drawSelectionBox() {
     selectionBoxEl.style.width = width + 'px';
     selectionBoxEl.style.height = height + 'px';
 
-    drawDimensionBox(width > 70 && height > 22);
+    requestAnimationFrame(drawDimensionBox);
 };
-function drawDimensionBox(isSmall) {
+function drawDimensionBox() {
     let { width, height, dimensionBoxEl } = EZ_CROP_APP;
 
-    if (isSmall) {
+    if (width > 70 && height > 22) {
         dimensionBoxEl.style.fontSize = '12px';
     } else {
         dimensionBoxEl.style.fontSize = '9px';
