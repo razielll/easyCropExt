@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+/* was body.modal-open */
+
+.ezcrop-modal-open {
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.ezcrop-modal {
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+    z-index: -1;
+}
+
+.ezcrop-modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+    z-index: 9999;
+}
+
+.ezcrop-modal-dialog {
+    position: relative;
+    max-width: 600px;
+    width: 500px;
+    max-height: 50vh;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: auto;
+    cursor: default;
+}
+
+.ezcrop-modal-header {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    padding-bottom: 0;
+    color: black;
+    padding: .5rem;
+}
+
+.ezcrop-close-modal {
+    font-size: 1.5rem;
+    border: 0;
+    background: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: color .2s ease-in;
+    outline: 0;
+}
+
+.modal-header .close-modal:hover, .modal-header .close-modal:focus {
+    color: red;
+}
+
+.ezcrop-image-container {
+    display: block;
+}
+
+.ezcrop-modal-image {
+    display: block;
+    margin: 0 auto;
+    background-color: #d4d4d480;
+    object-fit: scale-down;
+    max-width: 100%;
+    height: 300px;
+    padding: 2px;
+}
+
+.ezcrop-selection-box {
+    position: absolute;
+    z-index: 9999;
+    background-color: rgba(0, 0, 150, 0.4);
+    overflow: hidden;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+}
+
+.ezcrop-dimension-box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: lime;
+    font-size: 12px;
+    padding: 4px;
+}
