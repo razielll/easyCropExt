@@ -7,4 +7,4 @@ Improved code readability
 Reduced DOM usage
 Removed redundant css
 Increased readability and simplicity of code
-## Next ver short cut for complete screen capture
+### Next ver short cut for complete screen capture
