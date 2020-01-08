@@ -1,10 +1,10 @@
 
 # Easy Crop - Awesome tool for cropping and taking screenshots
+##  Version 1.0.0
+CTRL + SHIFT + A to take a screen shot of the whole page
+
 ## Version 0.0.2
-Complete Revamp of code
-Improved performance -> Moved to requestAnimationFrame method.
-Improved code readability
+Complete Revamp of code improved readability & quality
+Improved performance -> requestAnimationFrame method
 Reduced DOM usage
 Removed redundant css
-Increased readability and simplicity of code
-### Upcoming: shortcut for complete screen capture

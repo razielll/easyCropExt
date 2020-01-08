@@ -234,4 +234,15 @@ function init() {
     addListeners();
     buildAndAppendBoxes();
     buildAndAppendModal();
+    addScreenShotShortCut();
 };
+
+function addScreenShotShortCut() {
+    document.body.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && e.shiftKey && e.which == 65) {
+            EZ_CROP_APP.isScreenshot = true;
+            EZCROP_GET_IMAGE();
+        }
+    }, { capture: true, passive: true })
+
+}
