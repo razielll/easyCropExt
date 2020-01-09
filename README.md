@@ -1,6 +1,9 @@
 
 # Easy Crop - Awesome tool for cropping and taking screenshots
 
+## Version 1.0.3
+Fixed bug isScreenshot not returning to false
+
 ## Version 1.0.2
 added animation frame for dimensions box
 ##  Version 1.0.1

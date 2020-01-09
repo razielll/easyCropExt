@@ -208,6 +208,7 @@ function EZCROP_GET_IMAGE() {
 
                 if (EZ_CROP_APP.isScreenshot) {
                     imageData = canvas.toDataURL('image/png');
+                    EZ_CROP_APP.isScreenshot = false;
                 } else {
                     imageData = handleCrop(canvas);
                 }
