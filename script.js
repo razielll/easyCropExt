@@ -68,8 +68,10 @@ function handleMouseMove(e) {
     EZ_CROP_APP.width = Math.abs(EZ_CROP_APP.sx - EZ_CROP_APP.ex);
     EZ_CROP_APP.height = Math.abs(EZ_CROP_APP.sy - EZ_CROP_APP.ey);
 
-    EZ_CROP_APP.animationFrameId = requestAnimationFrame(drawSelectionBox);
-    requestAnimationFrame(drawDimensionBox);
+    EZ_CROP_APP.animationFrameId = requestAnimationFrame(function () {
+        drawSelectionBox();
+        drawDimensionBox();
+    });
 };
 function handleMouseUp(e) {
     if (!e.shiftKey || e.which !== 1) return clearSelectionBox();
