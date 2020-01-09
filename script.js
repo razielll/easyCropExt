@@ -91,6 +91,16 @@ function handleEscapeKey(e) {
         EZ_CROP_APP.modalEl.classList.remove('is-visible');
     };
 };
+function handleScreenshotShortcut() {
+    document.body.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && e.shiftKey && e.which == 65) {
+            EZ_CROP_APP.isScreenshot = true;
+            EZCROP_GET_IMAGE();
+        }
+    }, { capture: true, passive: true })
+
+};
+
 // =============================================================================
 // Drawing & DOM
 // =============================================================================
@@ -134,7 +144,9 @@ function buildAndAppendModal() {
     EZ_CROP_APP.modalLinkEl = linkEl;
 
     let imageEl = document.createElement('img');
+    imageEl.setAttribute('crossOrigin', 'Anonymous');
     imageEl.setAttribute('class', 'ezcrop-modal-image');
+
     imageEl.onclick = function (e) { e.stopPropagation(); };
     EZ_CROP_APP.modalImageEl = imageEl;
 
@@ -193,11 +205,13 @@ function EZCROP_GET_IMAGE() {
             letterRendering: 1, allowTaint: false, useCORS: true,
             onrendered: (canvas) => {
                 let imageData;
+
                 if (EZ_CROP_APP.isScreenshot) {
                     imageData = canvas.toDataURL('image/png');
                 } else {
                     imageData = handleCrop(canvas);
                 }
+
                 canvas.remove();
                 handleModalContent(imageData);
                 handleModalOpen();
@@ -208,10 +222,7 @@ function EZCROP_GET_IMAGE() {
     };
 };
 function handleCrop(canvas) {
-    let ctx = canvas.getContext('2d');
-
     let { sx, ex, sy, ey, width, height } = EZ_CROP_APP;
-
     let sorted = {
         sx: sx < ex ? sx : ex,
         ex: ex > sx ? ex : sx,
@@ -219,6 +230,7 @@ function handleCrop(canvas) {
         ey: ey > sy ? ey : sy,
     };
 
+    let ctx = canvas.getContext('2d');
     let bodyCrop = ctx.getImageData(sorted.sx, sorted.sy, sorted.ex, sorted.ey);
 
     canvas.width = width;
@@ -235,15 +247,5 @@ function init() {
     addListeners();
     buildAndAppendBoxes();
     buildAndAppendModal();
-    addScreenShotShortCut();
+    handleScreenshotShortcut();
 };
-
-function addScreenShotShortCut() {
-    document.body.addEventListener('keydown', function (e) {
-        if (e.ctrlKey && e.shiftKey && e.which == 65) {
-            EZ_CROP_APP.isScreenshot = true;
-            EZCROP_GET_IMAGE();
-        }
-    }, { capture: true, passive: true })
-
-}
