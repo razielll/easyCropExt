@@ -1,6 +1,9 @@
 
 # Easy Crop - Awesome tool for cropping and taking screenshots
 
+Store page
+https://chrome.google.com/webstore/detail/easy-crop-crop-the-web/mncocmgajjjpnfkobgdelegiogknodfn?hl=en-US
+
 ## Version 1.0.3
 Fixed bug isScreenshot not returning to false
 
